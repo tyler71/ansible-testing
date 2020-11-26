@@ -1,0 +1,30 @@
+version: '3.7'
+services:
+    control:
+        hostname: "control"
+        volumes:
+            - './data:/data'
+        stdin_open: true
+        build: 
+            context: nodes
+            target: control
+    node1:
+        stdin_open: true
+        build: 
+            context: nodes
+            target: node
+    node2:
+        stdin_open: true
+        build: 
+            context: nodes
+            target: node
+    node3:
+        stdin_open: true
+        build: 
+            context: nodes
+            target: node
+    node4:
+        stdin_open: true
+        build: 
+            context: nodes
+            target: node

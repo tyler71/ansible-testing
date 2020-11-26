@@ -1,6 +1,12 @@
 [nodesa]
-node1  ansible_host=node1
-node2  ansible_host=node2
+node1   ansible_host=node1  ansible_user=root
+node2   ansible_host=node2  ansible_user=root
 [nodesb]
-node3  ansible_host=node3
-node4  ansible_host=node4
+node3   ansible_host=node3  ansible_user=root
+node5   ansible_host=node5  ansible_user=root
+[nodesc]
+node6   ansible_host=node6  ansible_user=root
+node7   ansible_host=node7  ansible_user=root
+node8   ansible_host=node8  ansible_user=root
+node9   ansible_host=node9  ansible_user=root
+node10  ansible_host=node10 ansible_user=root

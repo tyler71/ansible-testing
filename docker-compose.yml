@@ -7,24 +7,57 @@ services:
         stdin_open: true
         build: 
             context: nodes
-            target: control
-    node1:
-        stdin_open: true
+            target: ansible_control
+        networks:
+            - internal
+    client:
         build: 
             context: nodes
-            target: node
+            target: ansible_client
+        hostname: node
+        networks:
+            internal:
+              aliases: 
+                - node1
     node2:
-        stdin_open: true
-        build: 
-            context: nodes
-            target: node
+        image: ansible_node
+        networks:
+            - internal
     node3:
-        stdin_open: true
-        build: 
-            context: nodes
-            target: node
+        image: ansible_node
+        networks:
+            - internal
     node4:
-        stdin_open: true
-        build: 
-            context: nodes
-            target: node
+        image: ansible_node
+        networks:
+            - internal
+    node5:
+        image: ansible_node
+        networks:
+            - internal
+    node6:
+        image: ansible_node
+        networks:
+            - internal
+    node7:
+        image: ansible_node
+        networks:
+            - internal
+    node8:
+        image: ansible_node
+        networks:
+            - internal
+    node9:
+        image: ansible_node
+        networks:
+            - internal
+    node10:
+        image: ansible_node
+        networks:
+            - internal
+
+networks:
+    internal:
+
+# Dealing with appending a number to a hostname
+# https://stackoverflow.com/questions/35062468/scaling-with-docker-composer-and-appending-a-number-to-the-hostname
